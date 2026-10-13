@@ -1,0 +1,7 @@
+Bundle-Name: Cookie Locale Collection Provider
+Bundle-SymbolicName: com.liferay.sample.collection.provider.cookie.locale
+Bundle-Version: 1.0.0
+Provide-Capability:\
+	liferay.resource.bundle;\
+		resource.bundle.base.name="content.Language"
+-dsannotations-options: inherit

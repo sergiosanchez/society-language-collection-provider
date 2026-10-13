@@ -21,6 +21,12 @@ Se basa en el mismo patrón que [filter-by-period](https://github.com/sergiosanc
 
 Si no hay cookie o no se encuentra la categoría, la colección queda vacía, salvo que se active *Mostrar todo si no hay cookie* (entonces solo se filtra por idioma).
 
+## Origen de la sociedad: cookie o dato del usuario
+
+Este ejemplo lee la sociedad de una cookie, porque es como el sitio identifica hoy la sociedad del usuario. Si esa información ya existe en otro sitio, conviene leerla de ahí. Por ejemplo, un campo personalizado del usuario sincronizado desde LDAP, una organización o un grupo de usuarios. El cambio se limita al método `_getSociedadCategoryIds`: hay que sustituir la lectura de la cookie por la del dato del usuario. El resto del proveedor (categoría, idioma, paginación) no cambia.
+
+Hay que tener en cuenta que el usuario puede modificar una cookie. Si la sociedad es solo un criterio de personalización, no es un problema. Si las noticias de una sociedad no deben verlas usuarios de otras, el filtro tiene que basarse en un dato del usuario o en permisos, no en una cookie.
+
 ## Configuración
 
 *Panel de control → Configuración del sistema → Contenido web → Noticias por sociedad (cookie) e idioma*
